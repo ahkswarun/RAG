@@ -5,14 +5,12 @@ from src.chunker import create_chunks
 from src.embedder import Embedder
 from src.vector_store import VectorStore
 from src.retriever import Retriever
-from src.gemini_client import GeminiClient
 from src.rag import RAG
 from src.storage import save_chunks, load_chunks
+from src.ollama_client import OllamaClient
 
 
 def get_rag(pdf_path: str):
-
-    pdf_path = "data/Kalki.pdf"
 
     vectorstore_dir = "vectorstore"
     
@@ -80,11 +78,11 @@ def get_rag(pdf_path: str):
         chunks
     )
 
-    gemini = GeminiClient()
+    llm = OllamaClient()
 
     rag = RAG(
         retriever,
-        gemini
+        llm
     )
 
     return rag

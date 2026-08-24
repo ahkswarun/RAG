@@ -5,7 +5,9 @@ from typing import List, Dict
 import numpy as np
 
 load_dotenv()
-os.environ["HF_TOKEN"] = os.getenv("HF_TOKEN")
+hf_token = os.getenv("HF_TOKEN")
+if hf_token:
+    os.environ["HF_TOKEN"] = hf_token
 
 class Embedder:
     def __init__(self):

@@ -1,9 +1,5 @@
-from src.gemini_client import GeminiClient
+from src.ollama_client import OllamaClient
 
-gemini = GeminiClient()
-
-response = gemini.generate(
-    "Who wrote Harry Potter?"
-)
-
+llm = OllamaClient()
+response = llm.generate("Who wrote Harry Potter?")
 print(response)

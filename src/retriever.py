@@ -1,7 +1,7 @@
 from typing import List, Dict
 
 class Retriever:
-    def __init__(self, embedder, vector_store, chunks,max_distance=1.0):
+    def __init__(self, embedder, vector_store, chunks,max_distance=2.5):
         self.embedder = embedder
         self.vector_store = vector_store
         self.chunks = chunks
