@@ -17,6 +17,14 @@ class OllamaClient:
     def generate(self, prompt: str) -> str:
         response = self.client.generate(
             model=self.model,
-            prompt=prompt
+            prompt=prompt,
+            system=(
+                "You answer questions using the provided document excerpts. "
+                "Always produce a useful answer from the excerpts when possible. "
+                "Never reply with a refusal if the excerpts contain relevant content."
+            ),
+            options={
+                "temperature": 0.2,
+            },
         )
         return response["response"]

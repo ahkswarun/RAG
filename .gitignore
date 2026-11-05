@@ -8,4 +8,4 @@ vectorstore/
 book.index
 chunks.json
 
-data/*.pdf
+data/*.pdfuploads/
